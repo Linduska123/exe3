@@ -59,23 +59,32 @@ public class Enemy : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        /*
-         * Task #1B: Implement the enemy functionality
-         * Useful functions and variables:
-         *  - Transform of the currently controlled enemy: transform
-         *    Contains its position and rotation
-         *  - Get nearest player to given position: GameManager.Instance.NearestPlayer(position)
-         *    Can return null, which should be checked for!
-         *    Use player's transform to determine their position.
-         *    Rotation can be calculated using Quaternion.LookRotation(direction, Vector3.forward).
-         *      The "Vector3.forward" specifies the upward direction. For us this is (0, 0, 1).
-         *  - Physical body of this enemy: mRigidBody
-         *    Can control rotation and movement
-         *    Use mRigidBody.MovePosition to move the enemy
-         * Implement a simple AI, which will head towards the closest player and follow them.
-         */
-    }
+       
+        GameObject nearestPlayerGameObject = GameManager.Instance.NearestPlayer(transform.position);
 
+     
+        if (nearestPlayerGameObject is null)
+        {
+            return;
+        }
+
+       
+        Transform nearestPlayer = nearestPlayerGameObject.transform;
+
+
+        Vector3 directionToPlayer = nearestPlayer.position - transform.position;
+        directionToPlayer.z = 0; 
+        directionToPlayer.Normalize();
+
+ 
+        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer, Vector3.forward);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
+
+       
+        Vector3 movement = directionToPlayer * (speed * Time.fixedDeltaTime);
+        Vector3 newPosition = transform.position + movement;
+        mRigidBody.MovePosition(newPosition);
+    }
     /// <summary>
     /// Triggered when a collision is detected.
     /// </summary>

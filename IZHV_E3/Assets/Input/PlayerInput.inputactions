@@ -142,6 +142,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "1a5b725c-f9e6-4e4a-8e0d-146972898af5",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadScheme",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "c618de3a-e78f-4c28-80f6-a6a274934b1a",
                     "path": "2DVector",
@@ -203,6 +214,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "GP",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7b0f0229-27ce-4354-92ae-0d3cd480136e",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadScheme",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -400,11 +422,44 @@
                 },
                 {
                     "name": "",
+                    "id": "a79d4915-257d-4015-a552-a0b4b5835243",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadScheme",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "710ac835-89dc-4c7c-9f69-bf3a8aa3ea5c",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "M&K1",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20f46e15-5f2e-4e79-b136-516c902cf0c2",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadScheme",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26d5db84-1d7c-4e0a-803e-e380d5a1b44a",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePadScheme",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -432,6 +487,17 @@
         {
             "name": "GP",
             "bindingGroup": "GP",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "GamePadScheme",
+            "bindingGroup": "GamePadScheme",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
